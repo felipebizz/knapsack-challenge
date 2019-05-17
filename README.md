@@ -1,14 +1,14 @@
 # Mobiquity Packaging challenge.
 
 
-To solve the Knapsack problem, I decided to implement a Strategy Pattern and a Dynamic Programming Algorithm.
+_To solve the Knapsack problem, I decided to implement a Strategy Pattern and a Dynamic Programming Algorithm._
 
  **Dynamic Programming Algorithm:**
   
  Dynamic programming is when you use solutions to smaller subproblems in order to solve a larger problem.
  
  This is easiest to implement recursively because you usually think of such solutions in terms of a recursive
- function. An iterative implementation is usually preferred though, because it takes less time and memory
+ function. An iterative implementation is usually preferred though, because it takes less time and memory.
 
  **Strategy Pattern:**
   
@@ -18,7 +18,7 @@ implementation to be used at runtime.
 I decided to use this pattern because I keep these implementation open to accept
 new kinds of algorithm like a Recursive or Greedy.
  
- **Data Structure**
+ **Data Structure:**
  
 The ***java.util.List*** is used in the solution to store the items of knapsack.
 
@@ -31,7 +31,7 @@ Your goal is to determine which things to put into the package so that the total
 
 You would prefer to send a package which weights less in case there is more than one package with the same price.
 
-## Input
+### Input
 
 ```
 81 : (1,53.38,€45) (2,88.62,€98) (3,78.48,€3) (4,72.30,€76) (5,30.18,€9) (6,46.34,€48)
@@ -40,7 +40,7 @@ You would prefer to send a package which weights less in case there is more than
 56 : (1,90.72,€13) (2,33.80,€40) (3,43.15,€10) (4,37.97,€16) (5,46.81,€36) (6,48.77,€79) (7,81.80,€45) (8,19.36,€79) (9,6.76,€64)
 ```
 
-## Output
+### Output
 
 ```
 4
@@ -69,14 +69,14 @@ To install type:
 mvn install
 ```
 
-## How to run
+### How to run
 
 ```
 mvn exec:java -Dexec.mainClass="com.mobiquityinc.packer.Packer" -Dexec.args="(pathFile}"
 ```
 
  
- ## Executing Test
+ ### Executing Test
  ```
  mvn clean test
 ```
