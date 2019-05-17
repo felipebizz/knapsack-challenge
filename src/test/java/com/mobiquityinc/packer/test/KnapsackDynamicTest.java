@@ -6,6 +6,9 @@ import com.mobiquityinc.packer.strategy.KnapsackDynamic;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+/**
+ * Test suite for the {@link KnapsackDynamic} class.
+ */
 public class KnapsackDynamicTest {
 
     @Test

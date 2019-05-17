@@ -12,6 +12,9 @@ import java.util.Collection;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+/**
+ * Test suite for the {@link InputReader} class.
+ */
 public class InputReaderTest extends AnyTestcase {
 
     @Test
@@ -44,7 +47,7 @@ public class InputReaderTest extends AnyTestcase {
             Collection<Package> scenarios = this.getRowReader().readFile("8 : (1,5.3,€34)");
             assertEquals(1, scenarios.size());
             Package pack = scenarios.iterator().next();
-            assertEquals(8, pack.getTotalWeight(),0.01);
+            assertEquals(8, pack.getTotalWeight(), 0.01);
             assertEquals(1, pack.getItems().size());
             Item singleItem = pack.getItems().iterator().next();
             assertEquals(1, singleItem.getIndex());
@@ -77,7 +80,7 @@ public class InputReaderTest extends AnyTestcase {
             Collection<Package> scenarios = this.getRowReader().readFile("75 : (1,55.31,€29) (2,14.55,€74) ");
             assertEquals(1, scenarios.size());
             Package singeScenario = scenarios.iterator().next();
-            assertEquals(75, singeScenario.getTotalWeight(),0.01);
+            assertEquals(75, singeScenario.getTotalWeight(), 0.01);
             assertEquals(2, singeScenario.getItems().size());
         } catch (Exception e) {
             e.printStackTrace();

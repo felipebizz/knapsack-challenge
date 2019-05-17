@@ -6,6 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+/**
+ * Test suite for the {@link Packer} class.
+ */
 public class PackerTest extends AnyTestcase {
 
     @Test
