@@ -72,7 +72,7 @@ mvn install
 ### How to run
 
 ```
-mvn exec:java -Dexec.mainClass="com.mobiquityinc.packer.Packer" -Dexec.args="(pathFile}"
+mvn exec:java -Dexec.mainClass="com.mobiquityinc.packer.Packer" -Dexec.args="{pathFile}"
 ```
 
  
