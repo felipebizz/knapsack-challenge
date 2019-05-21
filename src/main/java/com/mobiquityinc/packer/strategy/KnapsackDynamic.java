@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class KnapsackDynamic implements Strategy {
 
-    static int max(int a, int b) {
+    private static int max(int a, int b) {
         return (a > b) ? a : b;
     }
 
