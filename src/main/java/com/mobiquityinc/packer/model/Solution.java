@@ -31,7 +31,7 @@ public class Solution {
         }
     }
 
-    public void buildReturn(StringBuffer result) {
+    public void buildReturn(StringBuilder result) {
         if (items != null && !items.isEmpty()) {
             result.append("-").append("\n");
             for (Item item : items)

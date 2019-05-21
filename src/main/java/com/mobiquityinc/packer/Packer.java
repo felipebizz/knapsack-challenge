@@ -13,19 +13,19 @@ public class Packer {
     public static String build(String filePath) throws APIException {
 
         InputReader reader = new InputReader();
-        StringBuffer stringBufferResult = new StringBuffer();
+        StringBuilder stringBuilderResult = new StringBuilder();
 
         reader.readFile(filePath).forEach(scenario -> {
             Knapsack knapsack = new Knapsack(new KnapsackDynamic());
             Item[] items = new Item[]{};
             Solution solution = knapsack.executeStrategy(scenario.getItems().toArray(items), scenario.getTotalWeight());
             solution.display();
-            stringBufferResult.append("\n").append(position).append("\n");
-            solution.buildReturn(stringBufferResult);
+            stringBuilderResult.append("\n").append(position).append("\n");
+            solution.buildReturn(stringBuilderResult);
             position++;
         });
-        System.out.println(stringBufferResult.toString());
-        return stringBufferResult.toString();
+        System.out.println(stringBuilderResult.toString());
+        return stringBuilderResult.toString();
     }
 
     public static void main(String[] args) throws APIException {
