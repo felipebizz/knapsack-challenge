@@ -1,7 +1,7 @@
 package com.mobiquityinc.packer.test;
 
+import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.InputReader;
-import com.mobiquityinc.packer.exception.APIException;
 import com.mobiquityinc.packer.model.Package;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ class AnyTestcase {
         }
     };
 
-    public InputReader  getRowReader() {
+    protected InputReader  getRowReader() {
         return rowReader;
     }
 }

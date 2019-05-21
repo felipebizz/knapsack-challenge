@@ -1,4 +1,4 @@
-package com.mobiquityinc.packer.exception;
+package com.mobiquityinc.exception;
 
 /**
  * <code>APIException</code> is thrown if incorrect parameters are being passed.

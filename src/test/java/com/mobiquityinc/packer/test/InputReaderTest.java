@@ -1,8 +1,8 @@
 package com.mobiquityinc.packer.test;
 
+import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.InputReader;
 import com.mobiquityinc.packer.Packer;
-import com.mobiquityinc.packer.exception.APIException;
 import com.mobiquityinc.packer.model.Item;
 import com.mobiquityinc.packer.model.Package;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package com.mobiquityinc.packer;
 
-import com.mobiquityinc.packer.exception.APIException;
+import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.model.Item;
 import com.mobiquityinc.packer.model.Package;
 import org.apache.commons.io.FileUtils;
@@ -97,7 +97,7 @@ public class InputReader {
      * @param pack Package
      * @throws APIException if some validation is not attended
      */
-    protected void validateBusinessRules(final Package pack) throws APIException {
+    private void validateBusinessRules(final Package pack) throws APIException {
         if (pack.getTotalWeight() > 100)
             throw new APIException("The maximum weight a packet can carry must be ≤ 100");
         if (pack.getItems().size() > 15)

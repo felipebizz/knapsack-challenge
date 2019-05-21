@@ -1,6 +1,6 @@
 package com.mobiquityinc.packer;
 
-import com.mobiquityinc.packer.exception.APIException;
+import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.model.Item;
 import com.mobiquityinc.packer.model.Solution;
 import com.mobiquityinc.packer.strategy.KnapsackDynamic;
