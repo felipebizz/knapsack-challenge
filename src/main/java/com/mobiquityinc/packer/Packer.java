@@ -10,7 +10,7 @@ public class Packer {
 
     private static int position = 1;
 
-    public static String build(String filePath) throws APIException {
+    public static String pack(String filePath) throws APIException {
 
         InputReader reader = new InputReader();
         StringBuilder stringBuilderResult = new StringBuilder();
@@ -19,7 +19,6 @@ public class Packer {
             Knapsack knapsack = new Knapsack(new KnapsackDynamic());
             Item[] items = new Item[]{};
             Solution solution = knapsack.executeStrategy(scenario.getItems().toArray(items), scenario.getTotalWeight());
-            solution.display();
             stringBuilderResult.append("\n").append(position).append("\n");
             solution.buildReturn(stringBuilderResult);
             position++;
@@ -32,7 +31,7 @@ public class Packer {
         if(args == null) {
             System.out.println("You have not provided any arguments!");
         }else {
-            build(args[0]);
+            pack(args[0]);
         }
     }
 
