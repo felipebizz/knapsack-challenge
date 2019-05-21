@@ -20,7 +20,7 @@ public class InputReaderTest extends AnyTestcase {
     @Test
     public void checkWhen_FileArgIsNull() {
         try {
-            Packer.build(null);
+            Packer.pack(null);
         } catch (APIException ex1) {
             assertEquals(ex1.getMessage(), "File must exist.");
         } catch (Exception ex2) {
@@ -32,7 +32,7 @@ public class InputReaderTest extends AnyTestcase {
     @Test
     public void checkWhen_FileDoesNotExist() {
         try {
-            Packer.build("/file/doesnot/exist.txt");
+            Packer.pack("/file/doesnot/exist.txt");
         } catch (APIException ex1) {
             assertEquals(ex1.getMessage(), "File must exist.");
         } catch (Exception ex2) {
@@ -112,10 +112,4 @@ public class InputReaderTest extends AnyTestcase {
             fail("Not expecting exceptions of type " + e.getClass());
         }
     }
-
-
-    /*  1.The maximum weight a packet can carry is ≤ 100
-        2. There may be up to 15 items you need to choose
-        3. Max weight and cost of an item is ≤ 100
-    */
 }
