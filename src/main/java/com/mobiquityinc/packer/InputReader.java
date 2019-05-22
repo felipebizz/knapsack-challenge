@@ -56,7 +56,7 @@ public class InputReader {
     }
 
     /**
-     * @param line line
+     * @param line       line
      * @param lineNumber lineNumber
      * @return Package
      * @throws APIException if is not possible to read package

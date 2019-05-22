@@ -22,7 +22,7 @@ class AnyTestcase {
         }
     };
 
-    protected InputReader  getRowReader() {
+    protected InputReader getRowReader() {
         return rowReader;
     }
 }

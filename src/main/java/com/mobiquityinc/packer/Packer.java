@@ -28,9 +28,9 @@ public class Packer {
     }
 
     public static void main(String[] args) throws APIException {
-        if(args == null) {
+        if (args == null) {
             System.out.println("You have not provided any arguments!");
-        }else {
+        } else {
             pack(args[0]);
         }
     }
