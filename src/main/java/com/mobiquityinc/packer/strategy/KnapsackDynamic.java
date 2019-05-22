@@ -43,8 +43,8 @@ public class KnapsackDynamic implements Strategy {
         for (int n = numberOfItems; n > 0 && res > 0; n--) {
             if (res != matrix[n - 1][weight]) {
                 itemsSolution.add(items[n - 1]);
-                res -= items[n - 1].value;
-                weight -= items[n - 1].weight;
+                res -= items[n - 1].getValue();
+                weight -= items[n - 1].getWeight();
             }
         }
         return new Solution(itemsSolution, matrix[numberOfItems][(int) capacity], capacity);
