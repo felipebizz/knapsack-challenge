@@ -2,10 +2,10 @@ package com.mobiquityinc.packer.model;
 
 public class Item {
 
-    public int index;
-    public int value;
-    public Double weight;
-    public Double cost;
+    private int value;
+    private Double weight;
+    private int index;
+    private Double cost;
 
     public Item(int _index, double _weight, int _value) {
         this.index = _index;

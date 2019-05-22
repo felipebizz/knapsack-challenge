@@ -1,6 +1,6 @@
 package com.mobiquityinc.packer;
 
-import com.mobiquityinc.packer.exception.APIException;
+import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.model.Item;
 import com.mobiquityinc.packer.model.Package;
 import org.apache.commons.io.FileUtils;
@@ -25,12 +25,12 @@ import java.util.regex.Pattern;
  */
 public class InputReader {
 
-    private Pattern linePattern = Pattern.compile("\\((\\d+),(\\d+\\.?\\d*?),€?(\\d+)\\)");
+    private final Pattern linePattern = Pattern.compile("\\((\\d+),(\\d+\\.?\\d*?),€?(\\d+)\\)");
 
     /**
      * @param pathName pathName
      * @return Collection<Package>
-     * @throws APIException
+     * @throws APIException APIException if File don not exist.
      */
     public Collection<Package> readFile(String pathName) throws APIException {
 
@@ -56,10 +56,10 @@ public class InputReader {
     }
 
     /**
-     * @param line
-     * @param lineNumber
+     * @param line       line
+     * @param lineNumber lineNumber
      * @return Package
-     * @throws APIException
+     * @throws APIException if is not possible to read package
      */
 
     protected Package parseLine(String line, int lineNumber) throws APIException {
@@ -95,9 +95,9 @@ public class InputReader {
      * Additional constraints
      *
      * @param pack Package
-     * @throws APIException
+     * @throws APIException if some validation is not attended
      */
-    protected void validateBusinessRules(final Package pack) throws APIException {
+    private void validateBusinessRules(final Package pack) throws APIException {
         if (pack.getTotalWeight() > 100)
             throw new APIException("The maximum weight a packet can carry must be ≤ 100");
         if (pack.getItems().size() > 15)

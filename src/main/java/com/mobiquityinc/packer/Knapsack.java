@@ -6,7 +6,7 @@ import com.mobiquityinc.packer.strategy.Strategy;
 
 public class Knapsack {
 
-    private Strategy strategy;
+    private final Strategy strategy;
 
     public Knapsack(final Strategy _strategy) {
         this.strategy = _strategy;

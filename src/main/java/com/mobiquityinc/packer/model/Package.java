@@ -17,7 +17,7 @@ public class Package {
         return totalWeight;
     }
 
-    public  List<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 

@@ -5,7 +5,7 @@ _To solve the Knapsack problem, I decided to implement a Strategy Pattern and a 
 
  **Dynamic Programming Algorithm:**
   
- Dynamic programming is when you use solutions to smaller subproblems in order to solve a larger problem.
+ Dynamic programming is when you use solutions to smaller sub problems in order to solve a larger problem.
  
  This is easiest to implement recursively because you usually think of such solutions in terms of a recursive
  function. An iterative implementation is usually preferred though, because it takes less time and memory.
@@ -72,7 +72,7 @@ mvn install
 ### How to run
 
 ```
-mvn exec:java -Dexec.mainClass="com.mobiquityinc.packer.Packer" -Dexec.args="(pathFile}"
+mvn exec:java -Dexec.mainClass="com.mobiquityinc.packer.Packer" -Dexec.args="{pathFile}"
 ```
 
  
