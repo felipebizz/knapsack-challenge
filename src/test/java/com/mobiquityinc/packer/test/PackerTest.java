@@ -2,6 +2,9 @@ package com.mobiquityinc.packer.test;
 
 import com.mobiquityinc.packer.Packer;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
@@ -9,12 +12,16 @@ import static org.junit.Assert.fail;
 /**
  * Test suite for the {@link Packer} class.
  */
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Packer.class)
 public class PackerTest extends AnyTestcase {
+
+    private Packer packer = new Packer();
 
     @Test
     public void test_ReturnExpected() {
         try {
-            Packer packer = new Packer();
+
             String packageInfo = packer.pack("./src/test/resources/input.txt");
 
             String expectedResult = "\n" + "1\n" + "-\n" + "4\n" +
