@@ -4,9 +4,12 @@ import com.mobiquityinc.exception.APIException;
 import com.mobiquityinc.packer.model.Item;
 import com.mobiquityinc.packer.model.Solution;
 import com.mobiquityinc.packer.strategy.KnapsackDynamic;
+import org.apache.log4j.Logger;
 
 
 public class Packer {
+
+    private static Logger logger = Logger.getLogger(Packer.class);
 
     private static int position = 1;
 
@@ -23,13 +26,13 @@ public class Packer {
             solution.buildReturn(stringBuilderResult);
             position++;
         });
-        System.out.println(stringBuilderResult.toString());
+        logger.info(stringBuilderResult.toString());
         return stringBuilderResult.toString();
     }
 
     public static void main(String[] args) throws APIException {
         if (args == null) {
-            System.out.println("You have not provided any arguments!");
+            logger.info("You have not provided any arguments!");
         } else {
             pack(args[0]);
         }

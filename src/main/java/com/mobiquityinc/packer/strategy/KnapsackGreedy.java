@@ -2,6 +2,7 @@ package com.mobiquityinc.packer.strategy;
 
 import com.mobiquityinc.packer.model.Item;
 import com.mobiquityinc.packer.model.Solution;
+import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 
@@ -10,6 +11,8 @@ import java.util.Arrays;
  * and use a greedy strategy to fit the greatest value into the knapsack.
  */
 public class KnapsackGreedy implements Strategy {
+
+    private static Logger logger = Logger.getLogger(KnapsackGreedy.class);
 
     public static void main(String[] args) {
         KnapsackGreedy knapsackGreedy = new KnapsackGreedy();
@@ -27,7 +30,7 @@ public class KnapsackGreedy implements Strategy {
 
         //float timeInSeconds = knapsackGreedy.TimeToFind(items, 15);
         float timeInSeconds = knapsackGreedy.TimeToFind(items2, 50);
-        System.out.println("Time to Run Greedy Algorithm : " + timeInSeconds + " seconds");
+        logger.info("Time to Run Greedy Algorithm : " + timeInSeconds + " seconds");
     }
 
     public Solution execute(Item[] items, double capacity) {
@@ -44,7 +47,7 @@ public class KnapsackGreedy implements Strategy {
                 remainingWeight -= items[i].getWeight();
                 packageValue += items[i].getValue();
 
-                System.out.println("Package: " + i + " - Weight " + items[i].getWeight() + " - Value: " + items[i].getValue());
+                logger.info("Package: " + i + " - Weight " + items[i].getWeight() + " - Value: " + items[i].getValue());
                 i++;
             }
 
@@ -53,7 +56,7 @@ public class KnapsackGreedy implements Strategy {
             }
         }
 
-        System.out.println("Max Value: £ \t" + packageValue);
+        logger.info("Max Value: £ \t" + packageValue);
         return new Solution(Arrays.asList(items), packageValue, capacity);
     }
 

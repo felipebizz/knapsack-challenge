@@ -1,9 +1,12 @@
 package com.mobiquityinc.packer.model;
 
+import org.apache.log4j.Logger;
+
 import java.util.List;
 
 public class Solution {
 
+    private static Logger logger = Logger.getLogger(Solution.class);
     private List<Item> items;
     private Double totalValuePackage;
     private Double maxWeightPackage;
@@ -20,14 +23,14 @@ public class Solution {
 
     public void display() {
         if (items != null && !items.isEmpty()) {
-            System.out.println("\n-------------------------");
-            System.out.println("Max Package Size : " + maxWeightPackage + " KG");
-            System.out.println("Items to pick :");
+            logger.info("\n-------------------------");
+            logger.info("Max Package Size : " + maxWeightPackage + " KG");
+            logger.info("Items to pick :");
 
             for (Item item : items) {
-                System.out.println("- " + item.toString());
+                logger.info("- " + item.toString());
             }
-            System.out.println("Total Package Value = " + totalValuePackage);
+            logger.info("Total Package Value = " + totalValuePackage);
         }
     }
 
