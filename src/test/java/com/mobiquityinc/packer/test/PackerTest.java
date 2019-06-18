@@ -16,13 +16,11 @@ import static org.junit.Assert.fail;
 @PrepareForTest(Packer.class)
 public class PackerTest extends AnyTestcase {
 
-    private Packer packer = new Packer();
-
     @Test
     public void test_ReturnExpected() {
         try {
 
-            String packageInfo = packer.pack("./src/test/resources/input.txt");
+            String packageInfo = Packer.pack("./src/test/resources/input.txt");
 
             String expectedResult = "\n" + "1\n" + "-\n" + "4\n" +
                     "\n" + "2\n" + "\n" + "3\n" + "-\n" + "4,3,2\n" +
