@@ -12,37 +12,35 @@ import java.util.Arrays;
  */
 public class KnapsackGreedy implements Strategy {
 
+    private static final int CAPACITY = 50;
     private static Logger logger = Logger.getLogger(KnapsackGreedy.class);
 
     public static void main(String[] args) {
+
         KnapsackGreedy knapsackGreedy = new KnapsackGreedy();
 
-        Item[] items = {new Item(4, 12),
-                new Item(2, 2),
-                new Item(1, 1),
-                new Item(2, 1),
-                new Item(10, 4)};
-
-
-        Item[] items2 = {new Item(60, 10),
+        Item[] items = {new Item(60, 10),
                 new Item(100, 20),
                 new Item(120, 30)};
 
-        //float timeInSeconds = knapsackGreedy.TimeToFind(items, 15);
-        float timeInSeconds = knapsackGreedy.TimeToFind(items2, 50);
+        float timeInSeconds = knapsackGreedy.timeToFind(items);
         logger.info("Time to Run Greedy Algorithm : " + timeInSeconds + " seconds");
+    }
+
+    private static int comparePackageValues(Item kPackA, Item kPackB) {
+        return kPackB.getCost().compareTo(kPackA.getCost());
     }
 
     public Solution execute(Item[] items, double capacity) {
 
-        Arrays.sort(items, (kPackA, kPackB) -> kPackB.getCost().compareTo(kPackA.getCost()));
+        Arrays.sort(items, KnapsackGreedy::comparePackageValues);
 
         double remainingWeight = capacity;
         double packageValue = 0d;
 
         int i = 0;
-        boolean stopProc = false;
-        while (!stopProc) {
+        boolean stopProcess = false;
+        while (!stopProcess) {
             if (items[i].getWeight() <= remainingWeight) {
                 remainingWeight -= items[i].getWeight();
                 packageValue += items[i].getValue();
@@ -52,7 +50,7 @@ public class KnapsackGreedy implements Strategy {
             }
 
             if (items[i].getWeight() > remainingWeight) {
-                stopProc = true;
+                stopProcess = true;
             }
         }
 
@@ -60,11 +58,10 @@ public class KnapsackGreedy implements Strategy {
         return new Solution(Arrays.asList(items), packageValue, capacity);
     }
 
-    private float TimeToFind(Item[] items, int capacity) {
+    private float timeToFind(Item[] items) {
         long start = System.currentTimeMillis();
-        execute(items, capacity);
+        execute(items, CAPACITY);
         long end = System.currentTimeMillis();
-        float duration = (end - start) / 1000f;
-        return duration;
+        return (end - start) / 1000f;
     }
 }
