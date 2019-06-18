@@ -25,10 +25,10 @@ import java.util.regex.Pattern;
  */
 public class InputReader {
 
-    private final Pattern linePattern = Pattern.compile("\\((\\d+),(\\d+\\.?\\d*?),€?(\\d+)\\)");
     private static final int TOTAL_VALUE = 100;
     private static final int TOTAL_WEIGHT = 100;
     private static final int TOTAL_ITEMS = 15;
+    private final Pattern linePattern = Pattern.compile("\\((\\d+),(\\d+\\.?\\d*?),€?(\\d+)\\)");
 
     /**
      * @param pathName pathName
