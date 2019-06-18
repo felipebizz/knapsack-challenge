@@ -25,6 +25,9 @@ import java.util.regex.Pattern;
  */
 public class InputReader {
 
+    private static final int TOTAL_VALUE = 100;
+    private static final int TOTAL_WEIGHT = 100;
+    private static final int TOTAL_ITEMS = 15;
     private final Pattern linePattern = Pattern.compile("\\((\\d+),(\\d+\\.?\\d*?),€?(\\d+)\\)");
 
     /**
@@ -98,14 +101,14 @@ public class InputReader {
      * @throws APIException if some validation is not attended
      */
     private void validateBusinessRules(final Package pack) throws APIException {
-        if (pack.getTotalWeight() > 100)
+        if (pack.getTotalWeight() > TOTAL_WEIGHT)
             throw new APIException("The maximum weight a packet can carry must be ≤ 100");
-        if (pack.getItems().size() > 15)
+        if (pack.getItems().size() > TOTAL_ITEMS)
             throw new APIException("You cannot choose more than 15 items");
         for (Item item : pack.getItems()) {
-            if (item.getWeight() > 100)
+            if (item.getWeight() > TOTAL_WEIGHT)
                 throw new APIException("Max weight must be <= 100");
-            if (item.getValue() > 100)
+            if (item.getValue() > TOTAL_VALUE)
                 throw new APIException("Item cost cannot be > 100");
         }
     }

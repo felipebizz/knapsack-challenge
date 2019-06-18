@@ -1,7 +1,9 @@
 package com.mobiquityinc.packer.test;
 
 import com.mobiquityinc.packer.model.Item;
+import com.mobiquityinc.packer.model.Solution;
 import com.mobiquityinc.packer.strategy.KnapsackGreedy;
+import junit.framework.TestCase;
 import org.junit.Test;
 
 /**
@@ -18,9 +20,9 @@ public class KnapsackGreedyTest {
                 new Item(4, 26.24, 55),
                 new Item(5, 63.69, 52)};
 
-        // KnapsackGreedy knapsackGreedy = new KnapsackGreedy();
-        // solution = knapsackGreedy.execute(items, 75);
-        // TestCase.assertEquals("Equals", solution.getTotalValuePackage(), 145, 0.0);
+        KnapsackGreedy knapsackGreedy = new KnapsackGreedy();
+        Solution solution = knapsackGreedy.execute(items, 75);
+        TestCase.assertEquals("Equals", solution.getTotalValuePackage(), 145, 0.0);
     }
 
 }

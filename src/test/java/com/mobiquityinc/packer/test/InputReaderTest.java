@@ -55,7 +55,7 @@ public class InputReaderTest extends AnyTestcase {
             Item singleItem = pack.getItems().iterator().next();
             Assert.assertEquals(1, singleItem.getIndex());
             Assert.assertEquals(5.3, singleItem.getWeight(), 0.01);
-            Assert.assertEquals(34, singleItem.getValue());
+            Assert.assertEquals(34, singleItem.getValue(), 0.01);
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Not expecting exceptions of type " + e.getClass());

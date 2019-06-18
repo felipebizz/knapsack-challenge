@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class KnapsackDynamic implements Strategy {
 
-    private static int max(int a, int b) {
+    private static double max(double a, double b) {
         return (a > b) ? a : b;
     }
 
@@ -23,20 +23,21 @@ public class KnapsackDynamic implements Strategy {
     public Solution execute(Item[] items, double capacity) {
         int i, j;
         int numberOfItems = items.length;
-        int matrix[][] = new int[numberOfItems + 1][(int) capacity + 1];
+        double matrix[][] = new double[numberOfItems + 1][(int) (capacity + 1)];
 
         for (i = 0; i <= numberOfItems; i++) {
             for (j = 0; j <= capacity; j++) {
                 if (i == 0 || j == 0)
                     matrix[i][j] = 0;
                 else if (items[i - 1].getWeight() <= j)
-                    matrix[i][j] = max(items[i - 1].getValue() + matrix[i - 1][(int) (j - items[i - 1].getWeight())], matrix[i - 1][j]);
+                    matrix[i][j] = max(items[i - 1].getValue() + matrix[i - 1][(int) (j - items[i - 1].getWeight())],
+                            matrix[i - 1][j]);
                 else
                     matrix[i][j] = matrix[i - 1][j];
             }
         }
 
-        int res = matrix[numberOfItems][(int) capacity];
+        double res = matrix[numberOfItems][(int) capacity];
         int weight = (int) capacity;
         List<Item> itemsSolution = new ArrayList<>();
 
