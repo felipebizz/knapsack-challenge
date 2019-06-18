@@ -7,14 +7,14 @@ import java.util.List;
 public class Solution {
 
     private static Logger logger = Logger.getLogger(Solution.class);
-    private List<Item> items;
+    private final List<Item> items;
     private Double totalValuePackage;
     private Double maxWeightPackage;
 
-    public Solution(List<Item> _items, double _totalValuePackage, double _maxWeightPackage) {
-        this.items = _items;
-        this.totalValuePackage = _totalValuePackage;
-        this.maxWeightPackage = _maxWeightPackage;
+    public Solution(List<Item> items, double totalValuePackage, double maxWeightPackage) {
+        this.items = items;
+        this.totalValuePackage = totalValuePackage;
+        this.maxWeightPackage = maxWeightPackage;
     }
 
     public Double getTotalValuePackage() {
